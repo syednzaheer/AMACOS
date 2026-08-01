@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AMACOS | Dashboard</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="db_style.css">
+</head>
+
+<body>
+
+    <!-- ENGINE (ABSOLUTE, BEHIND EVERYTHING) -->
+    <canvas id="bg-engine"></canvas>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">AMACOS</div>
+
+            <nav class="nav">
+                <a href="../landing/ld_index.html" class="nav-item active">Portal</a>
+
+                <div class="nav-item disabled">
+                    Live Intelligence
+                    <span class="badge">Coming<br>Soon</span>
+                </div>
+
+                <div class="nav-item disabled">
+                    System Status
+                    <span class="badge">Coming<br>Soon</span>
+                </div>
+            </nav>
+
+            <a href="../problem/pb_index.html" class="nav-item report">
+                Report Issue
+            </a>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+            <header class="header">
+                <h1>Welcome back.</h1>
+                <p>Your campus is quietly reporting in.</p>
+            </header>
+
+            <section class="content">
+
+                <!-- FEED -->
+                <div class="card feed">
+                    <h2>Reported Issues</h2>
+                    <ul id="report-list"></ul>
+                </div>
+
+                <!-- OVERVIEW -->
+                <div class="card overview">
+                    <h2>Overview</h2>
+
+                    <div class="grid">
+                        <div class="stat">
+                            <span>Total</span>
+                            <strong id="total-count">0</strong>
+                        </div>
+                        <div class="stat">
+                            <span>Pending</span>
+                            <strong id="pending-count">0</strong>
+                        </div>
+                        <div class="stat">
+                            <span>Resolved</span>
+                            <strong id="resolved-count">0</strong>
+                        </div>
+                    </div>
+                    <p class="overview-note">Attendance intelligence isn't wired up yet - it's on the roadmap, not faked here.</p>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts (ORDER MATTERS) -->
+    <script src="db_engine.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="db_script.js"></script>
+</body>
+
+</html>

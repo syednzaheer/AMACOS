@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                          AMACOS LANDING PAGE                                 ║
+║                                                                              ║
+║  ─────────────────────────────────────────────────────────────────────────   ║
+║  Design Philosophy: Premium, state-of-the-art interface with modern          ║
+║  aesthetics including glassmorphism, smooth animations, and dynamic          ║
+║  interactions. Designed to create an immediate "WOW" factor.                 ║
+║                                                                              ║
+║  Key Design Features:                                                        ║
+║  • Curated color palette with HSL-tailored primary colors                    ║
+║  • Google Fonts (Outfit) for modern typography                               ║
+║  • Smooth scroll animations and micro-interactions                           ║
+║  • Responsive grid layouts with glassmorphic cards                           ║
+║  • Pulsing hero visual with ripple animations                                ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMACOS | Campus Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="ld_style.css?v=2.1">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+        <div class="logo">AMACOS</div>
+        <div class="nav-links">
+            <a href="#vision">Vision</a>
+            <a href="#logic">System Logic</a>
+            <a href="#impact">Impact</a>
+            <a href="../problem/pb_index.html" class="nav-btn">Report Issue</a>
+            <a href="../dashboard/db_index.html" class="nav-btn"
+                style="margin-left: 10px; border-color: transparent;">Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title reveal-text" id="split-target">The Campus That <span class="highlight">Thinks</span>.
+            </h1>
+            <p class="hero-subtitle reveal-text delay-1">Autonomous Multi-Agent Campus Operating System</p>
+            <p class="hero-description reveal-text delay-2">Disconnected Tools are History. <br>Welcome to the Central
+                Intelligence Layer.</p>
+            <div class="fade-in-up delay-3">
+                <a href="#vision" class="cta-btn">Explore The Vision</a>
+                <a href="../dashboard/db_index.html" class="cta-btn"
+                    style="background: transparent; border: 1px solid white; margin-left: 10px;">Enter System</a>
+            </div>
+        </div>
+        <div class="hero-visual fade-in">
+            <div id="three-canvas-container" style="width: 100%; height: 100%;"></div>
+            <div class="pulse-circle core"></div>
+            <div class="pulse-circle ring-1"></div>
+            <div class="pulse-circle ring-2"></div>
+            <div class="pulse-circle ring-3"></div>
+        </div>
+    </header>
+
+    <!-- The Reality Section -->
+
+    <section id="vision" class="section reality-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">The Core Reality</h2>
+            <p class="section-subtitle scroll-reveal delay-1">Modern Campuses Operate as Collections of Disconnected
+                Tools.</p>
+
+            <div class="grid-3">
+                <div class="card reality-card scroll-reveal kinetic-lift delay-1">
+                    <div class="icon">📷</div>
+                    <h3>Blind CCTV</h3>
+                    <p>Records But Does Not Reason.</p>
+                </div>
+                <div class="card reality-card scroll-reveal kinetic-lift delay-2">
+                    <div class="icon">📝</div>
+                    <h3>Passive Logs</h3>
+                    <p>Attendance Data That Ignores Patterns.</p>
+                </div>
+                <div class="card reality-card scroll-reveal kinetic-lift delay-3">
+                    <div class="icon">🐌</div>
+                    <h3>Slow Response</h3>
+                    <p>Incidents Escalate Before Detection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution Section -->
+
+    <section class="section solution-section">
+        <div class="container">
+            <div class="solution-content">
+                <h2 class="section-title scroll-reveal">The Intelligence Layer</h2>
+                <p class="section-text scroll-reveal delay-1">
+                    AMACOS is not a Chatbot. It is not a Dashboard. <br>
+                    It is a Living System that <strong>Senses, Thinks, Decides, and Acts.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Logic (Agents) -->
+
+    <section id="logic" class="section agents-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Four Specialized Agents</h2>
+            <p class="section-subtitle scroll-reveal delay-1">The Core Intelligence of the Self-Driving Campus.</p>
+
+            <div class="agents-grid">
+
+                <!-- Agent 1: The Sentinel -->
+
+                <div class="agent-card scroll-reveal kinetic-lift">
+                    <div class="agent-number">01</div>
+                    <h3>The Sentinel</h3>
+                    <p><strong>Guard:</strong> Zero-Trust Validation. <br>Dual-Factor Rolls and Secret Tokens prevent
+                        Spoofing before AI Processing.</p>
+                </div>
+
+                <!-- Agent 2: Perception Engine -->
+
+                <div class="agent-card scroll-reveal kinetic-lift delay-1">
+                    <div class="agent-number">02</div>
+                    <h3>Perception Engine</h3>
+                    <p><strong>Intelligence:</strong> Gemini 2.5 Flash Analysis. <br>Reads Photo Evidence and
+                        Descriptions to Categorize Threats Instantly.</p>
+                </div>
+
+                <!-- Agent 3: The Watchdog -->
+
+                <div class="agent-card scroll-reveal kinetic-lift delay-2">
+                    <div class="agent-number">03</div>
+                    <h3>The Watchdog</h3>
+                    <p><strong>Governance:</strong> Administrative Auditor. <br>Calculates SLA Deadlines and Assigns
+                        Immutable Case IDs for Tracking.</p>
+                </div>
+
+                <!-- Agent 4: The Dispatcher -->
+
+                <div class="agent-card scroll-reveal kinetic-lift">
+                    <div class="agent-number">04</div>
+                    <h3>The Dispatcher</h3>
+                    <p><strong>Action:</strong> Action Protocol Synthesizer. <br>Generates High-Urgency Alerts for
+                        Relevant Campus Response Teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+
+    <section id="impact" class="section impact-section">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">The Paradigm Shift</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item scroll-reveal">
+                    <h4>Today</h4>
+                    <p>Reactive Safety</p>
+                    <p>Delayed Responses</p>
+                    <p>Admin Overload</p>
+                </div>
+                <div class="center-divider">
+                    <div class="arrow">➔</div>
+                </div>
+                <div class="comparison-item highlight scroll-reveal delay-1">
+                    <h4>AMACOS</h4>
+                    <p>Preventive Safety</p>
+                    <p>Instant Action</p>
+                    <p>Real-Time Intelligence</p>
+                </div>
+            </div>
+
+            <div class="final-statement scroll-reveal delay-2">
+                <p>Institutions Don't Need New Tools. <br>They Need Intelligence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">AMACOS</div>
+            <p class="footer-tagline">Building the Self-Driving Campus.</p>
+        </div>
+    </footer>
+
+    <!-- Immersive Background Layers -->
+
+    <div class="ambient-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <div class="bg-noise"></div>
+    <div class="bg-grid"></div>
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+    <script src="ld_script.js?v=2.1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="ld_3d_engine.js"></script>
+</body>
+
+</html>

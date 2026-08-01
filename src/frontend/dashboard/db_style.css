@@ -1,0 +1,260 @@
+:root {
+    /* Brand Colors */
+    --rust: #7C3E2E;
+    --bg: #050505;
+
+    /* UI Elements */
+    --glass: rgba(20, 20, 20, 0.35);
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #fff;
+    --muted: #aaa;
+    --font: 'Outfit', sans-serif;
+}
+
+/* Reset & Basics */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    overflow: hidden;
+    /* Prevent scroll */
+}
+
+/* 
+   BACKGROUND ENGINE 
+   The canvas sits behind everything else.
+*/
+#bg-engine {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+}
+
+/* 
+   APP LAYOUT 
+   Flex container holding Sidebar + Main Content.
+*/
+.dashboard {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    padding: 30px 20px;
+    background: rgba(10, 10, 10, 0.55);
+    backdrop-filter: blur(18px);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: var(--rust);
+    margin-bottom: 40px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Navigation Items */
+.nav-item {
+    padding: 12px 14px;
+    border-radius: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nav-item.active {
+    background: rgba(124, 62, 46, 0.2);
+    color: white;
+}
+
+.nav-item.disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    position: relative;
+}
+
+/* "Coming Soon" Badge */
+.badge {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.55rem;
+    color: var(--rust);
+    text-align: right;
+}
+
+.nav-item.report {
+    margin-top: auto;
+    background: rgba(124, 62, 46, 0.25);
+    color: white;
+}
+
+/* MAIN CONTENT AREA */
+.main {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header p {
+    color: var(--muted);
+}
+
+/* CONTENT GRID */
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* GLASS CARDS */
+.card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 24px;
+    backdrop-filter: blur(22px);
+}
+
+/* FEED LIST */
+.feed ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.feed li {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 14px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.feed li span {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* OVERVIEW STATS */
+.overview .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 14px;
+    padding: 14px 18px;
+}
+
+.stat span {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.stat strong {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* ISSUE STATUS BADGES */
+.issue-left {
+    font-weight: 500;
+}
+
+.issue-status {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.issue-status.pending {
+    background: rgba(255, 165, 0, 0.15);
+    color: #ffb347;
+}
+
+.issue-status.resolved {
+    background: rgba(0, 200, 120, 0.15);
+    color: #5dffb0;
+}
+
+.issue-status.escalated {
+    background: rgba(255, 60, 60, 0.15);
+    color: #ff6b6b;
+    animation: escalate-pulse 1.6s ease-in-out infinite;
+}
+
+.issue-status.rejected {
+    background: rgba(150, 150, 150, 0.15);
+    color: #a0a0a0;
+}
+
+@keyframes escalate-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+}
+
+.issue-meta {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-top: 2px;
+}
+
+.resolve-btn {
+    margin-left: 12px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    color: inherit;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.resolve-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.overview-note {
+    font-size: 0.72rem;
+    opacity: 0.5;
+    margin-top: 10px;
+    line-height: 1.4;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "amacos-prototype",
+  "version": "1.0.0",
+  "description": "Autonomous Multi-Agent Campus Operating System",
+  "main": "src/backend/server.js",
+  "scripts": {
+    "start": "node src/backend/server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0",
+    "socket.io": "^4.8.1",
+    "uuid": "^13.0.0"
+  }
+}

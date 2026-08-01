@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                      AMACOS PROBLEM SUBMISSION FORM                          ║
+║                                                                              ║
+║  ─────────────────────────────────────────────────────────────────────────  ║
+║  Design Philosophy: Intuitive multi-modal input interface with floating     ║
+║  labels, drag-and-drop uploads, and smooth mode transitions. Designed       ║
+║  for effortless problem reporting across text, image, and video formats.    ║
+║                                                                              ║
+║  Key Design Features:                                                        ║
+║  • Floating label inputs with smooth animations                             ║
+║  • Mode selector with Material Icons for visual clarity                     ║
+║  • Drag-and-drop upload zones with preview functionality                    ║
+║  • Animated canvas background for visual interest                           ║
+║  • Premium button states with micro-interactions                            ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMACOS - Report Problem</title>
+    <!-- Fonts: Outfit for futuristic feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="pb_style.css">
+</head>
+
+<body>
+
+    <div class="bg-grid"></div>
+    <canvas id="hero-canvas"></canvas>
+
+    <main class="container" id="main-container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>Describe the Problem</h1>
+            <p>Submit Campus Issues in Any Form — Text, Image, or Video.</p>
+        </header>
+
+        <!-- User Details -->
+        <div class="user-details">
+            <div class="input-group">
+                <input type="text" id="user-name" class="detail-input" placeholder=" " autocomplete="off">
+                <label for="user-name" class="floating-label">Full Name</label>
+                <div class="input-border"></div>
+            </div>
+            <div class="input-group">
+                <input type="text" id="user-roll" class="detail-input" placeholder=" " autocomplete="off">
+                <label for="user-roll" class="floating-label">Roll No.</label>
+                <div class="input-border"></div>
+            </div>
+        </div>
+
+        <!-- Input Mode Selector -->
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="text">
+                <span class="material-icons-round">edit_note</span>
+                <span>Text</span>
+            </button>
+            <button class="mode-btn" data-mode="image">
+                <span class="material-icons-round">add_photo_alternate</span>
+                <span>Image</span>
+            </button>
+            <button class="mode-btn" data-mode="video">
+                <span class="material-icons-round">videocam</span>
+                <span>Video</span>
+            </button>
+        </div>
+
+        <!-- Input Areas -->
+        <div class="input-container">
+
+            <!-- Text Mode -->
+            <div class="input-section active" id="input-text">
+                <textarea placeholder="Explain the problem clearly... (e.g., 'AC is leaking in Lab 304')"
+                    id="problem-text"></textarea>
+            </div>
+
+            <!-- Image Mode -->
+            <div class="input-section" id="input-image">
+                <div class="upload-zone" id="drop-zone-image">
+                    <input type="file" id="file-image" accept="image/*" hidden>
+                    <div class="upload-content">
+                        <span class="material-icons-round icon-lg">cloud_upload</span>
+                        <p>Drag & Drop or <strong>Click to Upload</strong> Image</p>
+                    </div>
+                    <div class="preview-container" id="preview-image-container">
+                        <img src="" alt="Preview" id="image-preview">
+                        <button class="remove-btn" onclick="clearImage()"><span
+                                class="material-icons-round">close</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Mode -->
+            <div class="input-section" id="input-video">
+                <div class="upload-zone" id="drop-zone-video">
+                    <input type="file" id="file-video" accept="video/*" hidden>
+                    <div class="upload-content">
+                        <span class="material-icons-round icon-lg">movie</span>
+                        <p>Drag & Drop or <strong>Click to Upload</strong> Video</p>
+                    </div>
+                    <div class="preview-container file-info" id="preview-video-container">
+                        <span class="material-icons-round">description</span>
+                        <span id="video-filename">filename.mp4</span>
+                        <button class="remove-btn" onclick="clearVideo()"><span
+                                class="material-icons-round">close</span></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Action Button -->
+        <div class="action-area">
+            <button class="submit-btn" id="submit-btn">
+                <span class="btn-text">Submit Problem</span>
+            </button>
+        </div>
+
+        <div style="text-align: center; margin-top: 1rem;">
+            <a href="../landing/ld_index.html"
+                style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Back to Portal</a>
+        </div>
+
+    </main>
+
+    <script src="pb_script.js"></script>
+</body>
+
+</html>
