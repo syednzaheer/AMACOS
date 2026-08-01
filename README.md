@@ -1,12 +1,12 @@
-## AMACOS — Autonomous Multi-Agent Campus Operating System
+## AMACOS - Autonomous Multi-Agent Campus Operating System
 
 AMACOS is a six-agent pipeline that takes a raw campus complaint (text, image, or
 video submission) and turns it into a classified, prioritized, assigned, and
-SLA-tracked ticket — with a real-time dashboard and automatic escalation if
+SLA-tracked ticket, with a real-time dashboard and automatic escalation if
 nothing happens in time.
 
-Built for Agentathon 2025 (GDG Hyderabad) against the brief: prove that a
-campus can be run by a central intelligence layer instead of disconnected,
+Built during Agentathon 2025 (GDG Hyderabad) against a running clock of 36 hours.
+Still proves that a campus can be run by a central intelligence layer instead of disconnected,
 manually-operated tools.
 
 ## Architecture
